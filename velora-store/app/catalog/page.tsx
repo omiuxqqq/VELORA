@@ -1,2 +1,8 @@
-import Link from 'next/link'; import { products, categories } from '../../lib/data';
-export default function Catalog({searchParams}:any){const cat=searchParams?.category||'Все'; const q=(searchParams?.q||'').toLowerCase(); const list=products.filter(p=>(cat==='Все'||p.category===cat)&&p.name.toLowerCase().includes(q)); return <main className="min-h-screen p-6 bg-night"><div className="max-w-7xl mx-auto"><Link href="/" className="text-emerald-300">← VELORA</Link><h1 className="text-5xl font-black mt-6">Каталог</h1><form className="mt-6 flex gap-3"><input name="q" className="input" placeholder="Поиск товаров"/><button className="btn">Найти</button></form><div className="flex flex-wrap gap-2 mt-5">{categories.map(c=><Link className="btn2" href={`/catalog?category=${c}`}>{c}</Link>)}</div><div className="grid md:grid-cols-3 gap-5 mt-8">{list.map(p=><Link className="card p-5" href={`/product/${p.id}`}><div className="h-36 rounded-2xl bg-emerald-900/40 grid place-items-center text-5xl">V</div><h3 className="font-bold mt-4">{p.name}</h3><p className="text-white/60">{p.description}</p><b className="text-2xl mt-3 block">{p.price} ₽</b></Link>)}</div></div></main>}
+import { PageShell, ProductCard } from '@/lib/components'
+import { categories, products } from '@/lib/data'
+
+export default function Catalog({ searchParams }: { searchParams?: { q?: string } }) {
+  const q = (searchParams?.q || '').toLowerCase()
+  const filtered = q ? products.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)) : products
+  return <PageShell><main className="container section layout"><aside className="panel card sidebar"><h3>Категории</h3>{categories.map(c=><a key={c} className="side-link" href="#">{c}</a>)}</aside><section><div className="section-title"><div><h1>Каталог</h1><p className="muted">{q ? `Результаты поиска: ${q}` : 'Выберите товары VELORA'}</p></div><select className="input" style={{maxWidth:220}}><option>Популярные</option><option>Сначала дешёвые</option><option>Сначала дорогие</option></select></div><div className="grid cols3">{filtered.map(p=><ProductCard key={p.id} product={p}/>)}</div></section></main></PageShell>
+}

@@ -1,3 +1,11 @@
 import './globals.css'
-export const metadata = { title:'VELORA | Online Store', description:'Стиль. Качество. Выбор.' }
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ru"><body>{children}</body></html>}
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'VELORA | Online Store',
+  description: 'Стиль. Качество. Выбор. Интернет-магазин VELORA.'
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="ru"><body>{children}</body></html>
+}

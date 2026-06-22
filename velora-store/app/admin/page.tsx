@@ -1,2 +1,7 @@
-import { owner, products } from '../../lib/data'
-export default function Admin(){return <main className="min-h-screen bg-night p-6"><div className="max-w-7xl mx-auto"><h1 className="text-5xl font-black">Админ-панель VELORA</h1><p className="mt-2 text-emerald-200">Владелец: {owner.name} · {owner.email} · {owner.telegram}</p><div className="grid md:grid-cols-4 gap-4 mt-8">{['Товары','Заказы','Клиенты','Отзывы','Сообщения','Доставка','Аналитика','Настройки'].map(x=><div className="card p-6"><b>{x}</b><p className="text-white/50 mt-2">Будет подключено к Supabase</p></div>)}</div><h2 className="text-3xl font-black mt-10">Товары</h2><div className="card overflow-hidden mt-4"><table className="w-full text-left"><tbody>{products.map(p=><tr className="border-b border-white/10"><td className="p-4">{p.name}</td><td>{p.category}</td><td>{p.price} ₽</td><td>Остаток: {p.stock}</td></tr>)}</tbody></table></div></div></main>}
+import { AdminNav, PageShell } from '@/lib/components'
+import { money, orders, products } from '@/lib/data'
+
+export default function Admin() {
+  const revenue = orders.reduce((s,o)=>s+o.total,0)
+  return <PageShell><main className="container section admin"><AdminNav /><section><h1>Админ-панель VELORA</h1><p className="muted">Доступ OWNER будет включён после подключения Supabase Auth.</p><div className="kpi"><div className="card"><p className="muted">Выручка</p><h2>{money(revenue)}</h2></div><div className="card"><p className="muted">Заказы</p><h2>{orders.length}</h2></div><div className="card"><p className="muted">Товары</p><h2>{products.length}</h2></div><div className="card"><p className="muted">Клиенты</p><h2>356</h2></div></div><div className="card" style={{marginTop:20}}><h2>Последние заказы</h2><table className="table"><tbody>{orders.map(o=><tr key={o.id}><td>#{o.id}</td><td>{o.customer}</td><td>{money(o.total)}</td><td>{o.status}</td></tr>)}</tbody></table></div></section></main></PageShell>
+}

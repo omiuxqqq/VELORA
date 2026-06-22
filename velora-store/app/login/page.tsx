@@ -1,2 +1,3 @@
-import Link from 'next/link';
-export default function Login(){return <main className="min-h-screen bg-night grid place-items-center p-6"><div className="card p-8 w-full max-w-md"><h1 className="text-4xl font-black">Вход</h1><p className="text-white/60 mt-2">После подключения Supabase здесь будет реальная авторизация.</p><input className="input mt-6" placeholder="Email"/><input className="input mt-3" placeholder="Пароль" type="password"/><button className="btn w-full mt-5">Войти</button><Link href="/register" className="block text-center mt-4 text-emerald-300">Создать аккаунт</Link></div></main>}
+import Link from 'next/link'
+import { PageShell } from '@/lib/components'
+export default function Login(){return <PageShell><main className="container section" style={{maxWidth:560}}><div className="card"><h1>Вход</h1><p className="muted">После подключения Supabase вход будет настоящим.</p><form className="form"><input className="input" placeholder="Email"/><input className="input" placeholder="Пароль" type="password"/><Link className="btn" href="/profile">Войти</Link><Link className="pill" href="/register">Создать аккаунт</Link></form></div></main></PageShell>}

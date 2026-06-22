@@ -1,0 +1,2 @@
+import { PageShell } from '@/lib/components'
+export default function Profile(){return <PageShell><main className="container section"><h1>Личный кабинет</h1><div className="grid cols3"><div className="card"><h3>Профиль</h3><p>Имя: Андрей</p><p>Email: vi1344060@gmail.com</p></div><div className="card"><h3>Мои заказы</h3><p className="muted">После подключения базы здесь появится история заказов.</p></div><div className="card"><h3>Избранное</h3><p className="muted">Сохранённые товары.</p></div></div></main></PageShell>}

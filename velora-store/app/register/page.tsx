@@ -1,2 +1,3 @@
-import Link from 'next/link';
-export default function Register(){return <main className="min-h-screen bg-night grid place-items-center p-6"><div className="card p-8 w-full max-w-md"><h1 className="text-4xl font-black">Регистрация</h1><input className="input mt-6" placeholder="Имя"/><input className="input mt-3" placeholder="Email"/><input className="input mt-3" placeholder="Телефон"/><input className="input mt-3" placeholder="Пароль" type="password"/><button className="btn w-full mt-5">Зарегистрироваться</button><Link href="/login" className="block text-center mt-4 text-emerald-300">Уже есть аккаунт</Link></div></main>}
+import Link from 'next/link'
+import { PageShell } from '@/lib/components'
+export default function Register(){return <PageShell><main className="container section" style={{maxWidth:560}}><div className="card"><h1>Регистрация</h1><form className="form"><input className="input" placeholder="Имя"/><input className="input" placeholder="Email"/><input className="input" placeholder="Телефон"/><input className="input" placeholder="Пароль" type="password"/><Link className="btn" href="/profile">Зарегистрироваться</Link></form></div></main></PageShell>}
