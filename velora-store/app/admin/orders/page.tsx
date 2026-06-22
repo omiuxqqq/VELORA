@@ -1,3 +1,1 @@
-import { AdminNav, PageShell } from '@/lib/components'
-import { money, orders } from '@/lib/data'
-export default function AdminOrders(){return <PageShell><main className="container section admin"><AdminNav/><section><h1>Заказы</h1><div className="card"><table className="table"><thead><tr><th>№</th><th>Клиент</th><th>Сумма</th><th>Статус</th></tr></thead><tbody>{orders.map(o=><tr key={o.id}><td>#{o.id}</td><td>{o.customer}</td><td>{money(o.total)}</td><td><select className="input"><option>{o.status}</option><option>В сборке</option><option>Передан в доставку</option><option>Доставлен</option></select></td></tr>)}</tbody></table></div></section></main></PageShell>}
+export default function AdminOrders(){return <main className="wrap"><h1>Заказы</h1><div className="card"><table><tbody><tr><th>Заказ</th><th>Клиент</th><th>Статус</th></tr><tr><td>#1048</td><td>Иван Петров</td><td>Оплачен</td></tr></tbody></table></div></main>}

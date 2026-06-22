@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'VELORA | Online Store',
-  description: 'Стиль. Качество. Выбор. Интернет-магазин VELORA.'
+  description: 'Стиль. Качество. Выбор.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
