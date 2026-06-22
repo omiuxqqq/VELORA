@@ -1,4 +1,4 @@
-import { products, owner } from '@/lib/data'
+import { products, owner } from '../lib/data'
 import { Search, ShoppingCart, Heart, User, Truck, ShieldCheck, MessageCircle, Star } from 'lucide-react'
 
 function Logo(){ return <div className="flex items-center gap-3"><div className="h-11 w-11 rounded-2xl bg-emeraldBrand grid place-items-center shadow-lg shadow-emerald-500/20"><span className="text-2xl font-black">V</span></div><div><div className="text-xl font-black tracking-[0.24em]">VELORA</div><div className="text-xs text-emerald-200">Online Store</div></div></div> }
