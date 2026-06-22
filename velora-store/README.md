@@ -18,3 +18,4 @@
 
 ## Supabase
 SQL для базы находится в `supabase/schema.sql`.
+update final
