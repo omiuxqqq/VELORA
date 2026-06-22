@@ -1,9 +1,3 @@
-# VELORA Full Store
-Готовый каркас интернет-магазина VELORA: главная, каталог, товар, вход, регистрация, корзина, оформление заказа, личный кабинет, админка.
-
-Домен: velora-store.ru
-Владелец: Андрей Новиков
-Email: vi1344060@gmail.com
-Telegram: @omiuxqqq
-
-Следующий этап: подключить Supabase Auth и таблицы из supabase/schema.sql.
+import { products } from '@/lib/data'
+import Link from 'next/link'
+export default function AdminProducts(){return <main className='min-h-screen bg-night p-5'><div className='max-w-6xl mx-auto'><Link href='/admin' className='text-emeraldAccent'>← Админка</Link><h1 className='text-5xl font-black mt-4'>Управление товарами</h1><div className='glass rounded-3xl p-6 mt-6'><h2 className='text-2xl font-black'>Добавить товар</h2><div className='grid md:grid-cols-3 gap-4 mt-4'><input placeholder='Название'/><input placeholder='Цена'/><input placeholder='Категория'/><textarea className='md:col-span-3' placeholder='Описание'/><button className='btn md:col-span-3'>Добавить товар</button></div></div><div className='glass rounded-3xl p-6 mt-6'>{products.map(p=><div key={p.id} className='flex justify-between py-3 border-b border-emeraldAccent/10'><span>{p.image} {p.name}</span><span><button className='btn2 mr-2'>Изменить</button><button className='btn2'>Удалить</button></span></div>)}</div></div></main>}

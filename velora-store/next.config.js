@@ -1,3 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-module.exports = nextConfig
+import { Header, Footer } from '@/lib/ui'
+import { reviews } from '@/lib/data'
+export default function Reviews(){return <><Header/><main className='max-w-5xl mx-auto px-5 py-8'><h1 className='text-5xl font-black'>Отзывы</h1><div className='grid md:grid-cols-2 gap-5 mt-8'>{reviews.map(r=><div key={r.id} className='glass rounded-3xl p-6'><div className='text-yellow-400'>★★★★★</div><b>{r.name}</b><p className='text-slate-300 mt-3'>{r.text}</p><span className='text-emeraldAccent text-sm'>Проверенная покупка</span></div>)}</div><div className='glass rounded-3xl p-6 mt-8'><h2 className='text-2xl font-black'>Оставить отзыв</h2><input className='mt-4' placeholder='Ваше имя'/><select className='mt-4'><option>5 звёзд</option><option>4 звезды</option><option>3 звезды</option></select><textarea className='mt-4' placeholder='Ваш отзыв'/><button className='btn mt-4'>Отправить отзыв</button></div></main><Footer/></>}

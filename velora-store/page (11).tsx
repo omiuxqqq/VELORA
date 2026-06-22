@@ -1,0 +1,2 @@
+import { Header, Footer } from '@/lib/ui'
+export default function Register(){return <><Header/><main className='max-w-md mx-auto px-5 py-12'><div className='glass rounded-3xl p-8'><h1 className='text-4xl font-black'>Регистрация</h1><input className='mt-6' placeholder='Имя'/><input className='mt-4' placeholder='Email'/><input className='mt-4' placeholder='Телефон'/><input className='mt-4' type='password' placeholder='Пароль'/><button className='btn w-full mt-6'>Создать аккаунт</button></div></main><Footer/></>}
