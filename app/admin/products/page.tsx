@@ -1,0 +1,1 @@
+export default function AdminProducts(){return <main className="container section"><h1>Управление товарами</h1><form className="form card"><input placeholder="Название товара"/><input placeholder="Цена"/><input placeholder="Категория"/><textarea placeholder="Описание"/><button className="btn main">Добавить товар</button></form></main>}

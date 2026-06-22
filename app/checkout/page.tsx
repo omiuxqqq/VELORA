@@ -1,0 +1,1 @@
+export default function Checkout(){return <main className="container section"><h1>Оформление заказа</h1><form className="form card"><input placeholder="Имя"/><input placeholder="Телефон"/><input placeholder="Email"/><input placeholder="Адрес доставки"/><select><option>СДЭК</option><option>Почта России</option></select><button className="btn main">Оформить</button></form></main>}

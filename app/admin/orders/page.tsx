@@ -1,0 +1,1 @@
+export default function AdminOrders(){return <main className="container section"><h1>Заказы</h1><div className="card">#1048 Иван Петров — 4 990 ₽ — Оплачен</div><div className="card">#1049 Мария Смирнова — 6 990 ₽ — В сборке</div></main>}

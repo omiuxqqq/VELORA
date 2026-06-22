@@ -1,0 +1,3 @@
+import Link from 'next/link'
+const products=['Беспроводные наушники Velora Pro X1','Смарт-часы Velora Watch 5','Умная лампа Velora Light','Рюкзак Velora Urban','Органайзер премиум-класса','Портативная колонка Velora SoundBox']
+export default function Catalog(){return <main className="container section"><h1>Каталог</h1><p className="muted">Поиск, фильтры и товары. После подключения базы товары будут загружаться из Supabase.</p><div className="grid">{products.map((p,i)=><div className="card" key={p}><div className="img">{i%2?'⌚':'🎧'}</div><h3>{p}</h3><p className="price">{(1490+i*900).toLocaleString('ru-RU')} ₽</p><Link className="btn main" href={`/product/${i+1}`}>Открыть</Link></div>)}</div><p><Link className="btn" href="/">На главную</Link></p></main>}
