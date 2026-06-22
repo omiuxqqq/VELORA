@@ -16,3 +16,4 @@ npm run dev
 
 ## Доступ к админке
 В production нужно подключить Supabase Auth и разрешить /admin только пользователю с role OWNER.
+ 
