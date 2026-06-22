@@ -1,6 +1,10 @@
 import type React from 'react'
 import Link from 'next/link'
-import { products, money } from './data'
+import { products } from './data'
+
+function money(value: number) {
+  return new Intl.NumberFormat('ru-RU').format(value) + ' ₽'
+}
 
 export function Header() {
   return <header className="top"><div className="container bar">
