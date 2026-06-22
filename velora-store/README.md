@@ -1,19 +1,9 @@
-# VELORA | Online Store
+# VELORA Full Store
+Готовый каркас интернет-магазина VELORA: главная, каталог, товар, вход, регистрация, корзина, оформление заказа, личный кабинет, админка.
 
 Домен: velora-store.ru
 Владелец: Андрей Новиков
-Email владельца: vi1344060@gmail.com
+Email: vi1344060@gmail.com
 Telegram: @omiuxqqq
 
-## Запуск локально
-npm install
-npm run dev
-
-## Страницы
-/ - главная
-/login - вход
-/admin - админ-панель
-
-## Доступ к админке
-В production нужно подключить Supabase Auth и разрешить /admin только пользователю с role OWNER.
- 
+Следующий этап: подключить Supabase Auth и таблицы из supabase/schema.sql.

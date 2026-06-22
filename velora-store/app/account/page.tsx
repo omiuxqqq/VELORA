@@ -1,0 +1,1 @@
+export default function Account(){return <main className="min-h-screen bg-night p-6"><div className="max-w-5xl mx-auto"><h1 className="text-5xl font-black">Личный кабинет</h1><div className="grid md:grid-cols-3 gap-4 mt-8">{['Профиль','Мои заказы','Избранное','Отзывы','Бонусы','Сообщения'].map(x=><div className="card p-6 font-bold">{x}</div>)}</div></div></main>}
