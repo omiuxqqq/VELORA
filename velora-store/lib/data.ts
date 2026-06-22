@@ -30,9 +30,9 @@ export const products: Product[] = [
 export const categories = ['Все', 'Электроника', 'Дом', 'Аксессуары', 'Красота', 'Спорт']
 
 export const reviews = [
-  { name: 'Иван Петров', text: 'Очень стильный магазин, заказ пришёл быстро. Наушники отличные.', rating: 5, product: 'Velora Pro X1' },
-  { name: 'Мария Смирнова', text: 'Понравился дизайн сайта и удобная корзина. Буду заказывать ещё.', rating: 5, product: 'Velora Watch 5' },
-  { name: 'Алексей Кузнецов', text: 'Хорошая поддержка и понятное оформление заказа.', rating: 4, product: 'Velora Light' }
+  { id: 1, name: 'Иван Петров', text: '...', rating: 5, product: 'Velora Pro X1' },
+  { id: 2, name: 'Мария Смирнова', text: '...', rating: 5, product: 'Velora Watch 5' },
+  { id: 3, name: 'Алексей Кузнецов', text: '...', rating: 4, product: 'Velora Light' }
 ]
 
 export const orders = [
