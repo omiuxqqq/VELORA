@@ -1,3 +1,8 @@
-import { products, categories } from '@/lib/data'
-import { Shell, ProductCard } from '@/lib/ui'
-export default function Catalog(){return <Shell><div className="py-10"><h1 className="text-4xl font-black">Каталог</h1><div className="grid md:grid-cols-[240px_1fr] gap-6 mt-8"><aside className="card p-5 h-fit"><h3 className="font-bold mb-4">Категории</h3>{categories.map(c=><div className="py-2 text-slate-300" key={c}>{c}</div>)}</aside><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">{products.map(p=><ProductCard p={p} key={p.id}/>)}</div></div></div></Shell>}
+import { PageShell, ProductCard } from '@/lib/components'
+import { categories, products } from '@/lib/data'
+
+export default function Catalog({ searchParams }: { searchParams?: { q?: string } }) {
+  const q = (searchParams?.q || '').toLowerCase()
+  const filtered = q ? products.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)) : products
+  return <PageShell><main className="container section layout"><aside className="panel card sidebar"><h3>Категории</h3>{categories.map(c=><a key={c} className="side-link" href="#">{c}</a>)}</aside><section><div className="section-title"><div><h1>Каталог</h1><p className="muted">{q ? `Результаты поиска: ${q}` : 'Выберите товары VELORA'}</p></div><select className="input" style={{maxWidth:220}}><option>Популярные</option><option>Сначала дешёвые</option><option>Сначала дорогие</option></select></div><div className="grid cols3">{filtered.map(p=><ProductCard key={p.id} product={p}/>)}</div></section></main></PageShell>
+}

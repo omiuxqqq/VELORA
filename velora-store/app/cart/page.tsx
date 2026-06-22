@@ -1,1 +1,9 @@
-import Link from 'next/link';import { products } from '@/lib/data';import { Shell } from '@/lib/ui';export default function Cart(){const sum=products.slice(0,2).reduce((a,p)=>a+p.price,0);return <Shell><div className="py-10"><h1 className="text-4xl font-black">Корзина</h1><div className="grid md:grid-cols-[1fr_320px] gap-6 mt-8"><div>{products.slice(0,2).map(p=><div className="card p-5 mb-4 flex justify-between"><div>{p.image} <b>{p.name}</b></div><b>{p.price.toLocaleString('ru-RU')} ₽</b></div>)}</div><aside className="card p-5 h-fit"><h3 className="font-bold">Итого</h3><div className="text-3xl font-black mt-3">{sum.toLocaleString('ru-RU')} ₽</div><Link className="btn btn-primary w-full mt-5" href="/checkout">Оформить заказ</Link></aside></div></div></Shell>}
+import Link from 'next/link'
+import { PageShell } from '@/lib/components'
+import { money, products } from '@/lib/data'
+
+export default function Cart() {
+  const items = products.slice(0,2)
+  const total = items.reduce((s,p)=>s+p.price,0)
+  return <PageShell><main className="container section"><h1>Корзина</h1><div className="layout"><section className="grid">{items.map(p=><div className="card" key={p.id} style={{display:'flex',gap:18,alignItems:'center'}}><div className="product-img" style={{width:110,height:110,fontSize:44}}>{p.image}</div><div style={{flex:1}}><b>{p.name}</b><p className="muted">1 шт.</p></div><div className="price">{money(p.price)}</div></div>)}</section><aside className="card sidebar"><h2>Итого</h2><p className="price">{money(total)}</p><Link className="btn" href="/checkout">Оформить заказ</Link></aside></div></main></PageShell>
+}
