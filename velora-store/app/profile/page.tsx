@@ -1,1 +1,0 @@
-export default function Profile(){return <main className="wrap"><h1>Личный кабинет</h1><div className="grid"><div className="card">Профиль</div><div className="card">Мои заказы</div><div className="card">Избранное</div><div className="card">Бонусы</div></div></main>}

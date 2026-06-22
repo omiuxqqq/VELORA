@@ -1,1 +1,0 @@
-export default function AdminProducts(){return <main className="wrap"><h1>Управление товарами</h1><div className="card"><input placeholder="Название товара"/><input placeholder="Цена"/><input placeholder="Категория"/><button className="btn">Добавить товар</button></div></main>}

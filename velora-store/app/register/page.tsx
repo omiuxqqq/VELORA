@@ -1,1 +1,0 @@
-export default function Register(){return <main className="wrap"><h1>Регистрация</h1><div className="card"><input placeholder="Имя"/><input placeholder="Email"/><input placeholder="Пароль" type="password"/><button className="btn">Создать аккаунт</button></div></main>}

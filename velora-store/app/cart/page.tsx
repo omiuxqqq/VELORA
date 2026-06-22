@@ -1,1 +1,0 @@
-export default function Cart(){return <main className="wrap"><h1>Корзина</h1><div className="card"><p>Товары в корзине появятся после подключения базы данных.</p><a className="btn" href="/checkout">Оформить заказ</a></div></main>}

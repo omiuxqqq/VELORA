@@ -1,1 +1,0 @@
-export default function Reviews(){return <main className="wrap"><h1>Отзывы</h1><div className="card"><input placeholder="Ваше имя"/><textarea placeholder="Ваш отзыв"/><button className="btn">Оставить отзыв</button></div></main>}

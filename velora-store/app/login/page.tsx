@@ -1,1 +1,0 @@
-export default function Login(){return <main className="wrap"><h1>Вход</h1><div className="card"><input placeholder="Email"/><input placeholder="Пароль" type="password"/><button className="btn">Войти</button><p><a href="/register">Регистрация</a></p></div></main>}

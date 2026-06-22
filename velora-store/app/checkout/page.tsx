@@ -1,1 +1,0 @@
-export default function Checkout(){return <main className="wrap"><h1>Оформление заказа</h1><div className="card"><input placeholder="Имя"/><input placeholder="Телефон"/><input placeholder="Email"/><textarea placeholder="Адрес доставки"/><button className="btn">Подтвердить заказ</button></div></main>}

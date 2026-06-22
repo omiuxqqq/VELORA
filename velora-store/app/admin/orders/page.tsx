@@ -1,1 +1,0 @@
-export default function AdminOrders(){return <main className="wrap"><h1>Заказы</h1><div className="card"><table><tbody><tr><th>Заказ</th><th>Клиент</th><th>Статус</th></tr><tr><td>#1048</td><td>Иван Петров</td><td>Оплачен</td></tr></tbody></table></div></main>}
