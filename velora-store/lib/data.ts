@@ -1,46 +1,20 @@
-export type Product = {
-  id: number
-  name: string
-  price: number
-  oldPrice?: number
-  category: string
-  rating: number
-  reviews: number
-  badge?: string
-  image: string
-  description: string
-}
-
-export const owner = {
-  name: 'Андрей Новиков',
-  email: 'vi1344060@gmail.com',
-  telegram: '@omiuxqqq',
-  role: 'OWNER'
-}
-
-export const products: Product[] = [
-  { id: 1, name: 'Беспроводные наушники Velora Pro X1', price: 4990, oldPrice: 6990, category: 'Электроника', rating: 4.8, reviews: 128, badge: 'NEW', image: '🎧', description: 'Шумоподавление, Bluetooth 5.3, до 30 часов работы и премиальный звук.' },
-  { id: 2, name: 'Смарт-часы Velora Watch 5', price: 6990, oldPrice: 8990, category: 'Электроника', rating: 4.9, reviews: 90, badge: 'ХИТ', image: '⌚', description: 'Стильные часы с мониторингом здоровья, уведомлениями и влагозащитой.' },
-  { id: 3, name: 'Умная лампа Velora Light', price: 1490, oldPrice: 1990, category: 'Дом', rating: 4.7, reviews: 57, badge: 'SALE', image: '💡', description: 'Мягкий свет, несколько режимов и управление со смартфона.' },
-  { id: 4, name: 'Рюкзак Velora Urban', price: 2890, oldPrice: 3590, category: 'Аксессуары', rating: 4.9, reviews: 154, badge: 'NEW', image: '🎒', description: 'Городской рюкзак с отделением для ноутбука и влагозащитой.' },
-  { id: 5, name: 'Органайзер премиум-класса', price: 1590, category: 'Дом', rating: 4.6, reviews: 46, image: '📦', description: 'Организация пространства дома и на рабочем месте.' },
-  { id: 6, name: 'Портативная колонка Velora SoundBox', price: 3490, oldPrice: 4490, category: 'Электроника', rating: 4.8, reviews: 88, badge: 'ХИТ', image: '🔊', description: 'Мощный звук, глубокий бас и автономная работа до 12 часов.' }
+export const owner = { name:'Андрей Новиков', email:'vi1344060@gmail.com', telegram:'@omiuxqqq', role:'OWNER' }
+export const categories = ['Электроника','Для дома','Аксессуары','Красота','Спорт и отдых','Автотовары']
+export const products = [
+ {id:1,name:'Беспроводные наушники Velora Pro X1',price:4990,oldPrice:6990,category:'Электроника',rating:4.8,reviews:128,badge:'NEW',image:'🎧'},
+ {id:2,name:'Смарт-часы Velora Watch 5',price:6990,oldPrice:8990,category:'Электроника',rating:4.9,reviews:96,badge:'ХИТ',image:'⌚'},
+ {id:3,name:'LED-светильник для дома',price:2490,oldPrice:3290,category:'Для дома',rating:4.7,reviews:54,badge:'SALE',image:'💡'},
+ {id:4,name:'Органайзер премиум-класса',price:1590,oldPrice:2190,category:'Для дома',rating:4.6,reviews:42,badge:'NEW',image:'🗂️'},
+ {id:5,name:'Рюкзак Velora Urban',price:2890,oldPrice:3990,category:'Аксессуары',rating:4.8,reviews:73,badge:'ХИТ',image:'🎒'},
+ {id:6,name:'Беспроводная зарядка 3in1',price:2490,oldPrice:3490,category:'Электроника',rating:4.7,reviews:81,badge:'SALE',image:'🔋'}
 ]
-
-export const categories = ['Все', 'Электроника', 'Дом', 'Аксессуары', 'Красота', 'Спорт']
-
 export const reviews = [
-  { name: 'Иван Петров', text: 'Очень стильный магазин, заказ пришёл быстро. Наушники отличные.', rating: 5, product: 'Velora Pro X1' },
-  { name: 'Мария Смирнова', text: 'Понравился дизайн сайта и удобная корзина. Буду заказывать ещё.', rating: 5, product: 'Velora Watch 5' },
-  { name: 'Алексей Кузнецов', text: 'Хорошая поддержка и понятное оформление заказа.', rating: 4, product: 'Velora Light' }
+ {id:1,name:'Иван Петров',rating:5,text:'Отличное качество, быстрая доставка и красивый дизайн магазина.',product:'Velora Pro X1'},
+ {id:2,name:'Мария Смирнова',rating:5,text:'Понравилась упаковка и поддержка. Буду заказывать ещё.',product:'Velora Watch 5'},
+ {id:3,name:'Алексей Кузнецов',rating:4,text:'Хороший товар, всё соответствует описанию.',product:'LED-светильник'}
 ]
-
 export const orders = [
-  { id: 1048, customer: 'Иван Петров', total: 4990, status: 'Оплачен' },
-  { id: 1049, customer: 'Мария Смирнова', total: 6990, status: 'В сборке' },
-  { id: 1050, customer: 'Алексей Кузнецов', total: 1490, status: 'Доставлен' }
+ {id:1041,client:'Иван Петров',sum:4990,status:'Оплачен',date:'Сегодня'},
+ {id:1042,client:'Мария Смирнова',sum:6990,status:'В сборке',date:'Сегодня'},
+ {id:1043,client:'Алексей Кузнецов',sum:2490,status:'Доставлен',date:'Вчера'}
 ]
-
-export function money(value: number) {
-  return new Intl.NumberFormat('ru-RU').format(value) + ' ₽'
-}

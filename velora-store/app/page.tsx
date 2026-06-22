@@ -1,14 +1,4 @@
 import Link from 'next/link'
-import { PageShell, ProductCard } from '@/lib/components'
-import { products } from '@/lib/data'
-
-export default function Home() {
-  return <PageShell><main className="container">
-    <section className="hero">
-      <div className="hero-card"><div className="eyebrow">Доставка по всей России</div><h1 className="h1">Стиль.<br/><span>Качество.</span><br/>Выбор.</h1><p className="muted">VELORA — современный онлайн-магазин товаров для дома, стиля и технологий. Удобный каталог, быстрый заказ и поддержка клиентов.</p><div style={{display:'flex',gap:12,marginTop:24}}><Link className="btn" href="/catalog">Перейти в каталог →</Link><Link className="btn ghost" href="/reviews">Отзывы</Link></div></div>
-      <div className="hero-card hero-art"><div className="crystal">💎</div></div>
-    </section>
-    <section className="section grid features"><div className="feature">🛡️<b> Безопасная оплата</b><p className="muted">Платежи защищены</p></div><div className="feature">🚚<b> Доставка по РФ</b><p className="muted">От Калининграда до Владивостока</p></div><div className="feature">↩️<b> Возврат 14 дней</b><p className="muted">Лёгкий возврат товара</p></div><div className="feature">🎧<b> Поддержка 24/7</b><p className="muted">Всегда на связи</p></div><div className="feature">⭐<b> Бонусы</b><p className="muted">Скидки за отзывы</p></div></section>
-    <section className="section"><div className="section-title"><h2>Хиты продаж</h2><Link className="pill" href="/catalog">Смотреть все →</Link></div><div className="grid cols3">{products.slice(0,6).map(p=><ProductCard key={p.id} product={p}/>)}</div></section>
-  </main></PageShell>
-}
+import { products, categories } from '@/lib/data'
+import { Shell, ProductCard, TrustBar } from '@/lib/ui'
+export default function Home(){return <Shell><section className="glass mt-8 rounded-[32px] p-8 md:p-14 grid md:grid-cols-2 gap-8 items-center"><div><span className="rounded-full bg-emerald-500/15 px-4 py-2 text-sm text-emerald-200">Доставка по всей России</span><h1 className="mt-8 text-5xl md:text-7xl font-black leading-tight">Стиль.<br/><span className="text-emerald-300">Качество.</span><br/>Выбор.</h1><p className="mt-6 text-slate-300 max-w-xl">Современный онлайн-магазин товаров для дома, стиля и технологий.</p><div className="mt-8 flex gap-4"><Link className="btn btn-primary" href="/catalog">Перейти в каталог</Link><Link className="btn btn-outline" href="/reviews">Отзывы</Link></div></div><div className="rounded-[28px] bg-gradient-to-br from-emerald-700/40 to-black/40 p-10 text-center"><div className="mx-auto h-40 w-40 rounded-[36px] bg-gradient-to-br from-emeraldMain to-emeraldAccent flex items-center justify-center text-8xl font-black">V</div><div className="mt-6 grid grid-cols-3 gap-3 text-sm"><div className="card p-3">Оплата</div><div className="card p-3">Доставка</div><div className="card p-3">Поддержка</div></div></div></section><TrustBar/><section><h2 className="text-3xl font-black mb-5">Популярные категории</h2><div className="grid md:grid-cols-6 gap-4">{categories.map(c=><Link key={c} href="/catalog" className="card p-5 hover:border-emerald-400">{c}</Link>)}</div></section><section className="mt-12"><h2 className="text-3xl font-black mb-5">Хиты продаж 🔥</h2><div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5">{products.slice(0,4).map(p=><ProductCard key={p.id} p={p}/>)}</div></section></Shell>}
